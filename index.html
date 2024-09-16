@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphviz DFA Display</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/viz.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/full.render.js"></script>
+</head>
+<body>
+    <h1>NFA to DFA Conversion and Visualization using Graphviz</h1>
+
+    <!-- User Input Form -->
+    <form id="nfa-form">
+        <label for="states">States (comma separated):</label><br>
+        <input type="text" id="states" name="states" value="q0,q1,q2"><br><br>
+
+        <label for="alphabet">Alphabet (comma separated):</label><br>
+        <input type="text" id="alphabet" name="alphabet" value="a,b"><br><br>
+
+        <label for="transitions">Transitions (state-symbol-nextStates, e.g., q0-a-q1,q2):</label><br>
+        <input type="text" id="transitions" name="transitions" value="q0-a-q0,q1;q0-b-q0;q1-a-q2"><br><br>
+
+        <label for="start-state">Start State:</label><br>
+        <input type="text" id="start-state" name="start-state" value="q0"><br><br>
+
+        <label for="accept-states">Accept States (comma separated):</label><br>
+        <input type="text" id="accept-states" name="accept-states" value="q2"><br><br>
+
+        <input type="submit" value="Generate NFA and DFA">
+    </form>
+
+    <!-- Visualization Containers -->
+    <h2>NFA Visualization</h2>
+    <div id="nfa-graph"></div>
+
+    <h2>DFA Visualization</h2>
+    <div id="dfa-graph"></div>
+    <script src="script.js"></script>
+</body>
+</html>
